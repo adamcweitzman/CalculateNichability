@@ -1,10 +1,11 @@
 import sys
 import csv
 
-# path = '../JungleScoutFiles/Search_Term_of_bat_houses.csv'
-path = '../JungleScoutFiles/test.csv'
+path = '../JungleScoutFiles/Search_Term_of_bat_houses.csv'
+# path = '../JungleScoutFiles/test.csv'
 
-with open('../JungleScoutFiles/Search_Term_of_bat_houses.csv', newline='') as csvfile:
-    reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+with open(path) as csvfile:
+    reader = csv.DictReader(csvfile)
     for row in reader:
-        print(', '.join(row))
+        print(row['Rating'], row['Price'])
+        # print(row['person'], row['place'])

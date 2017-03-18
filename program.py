@@ -1,23 +1,44 @@
-import sys
+
 import csv
 import math
+import sys
 
 #path = '../JungleScoutFiles/Search_Term_of_bat_houses.csv'
 #path = '../JungleScoutFiles/Search_Term_of_shower_ curtains.csv'
 #path = '../JungleScoutFiles/test.csv'
 #path = '../JungleScoutFiles/Bedding.csv'
-path = '../JungleScoutFiles/Search Term of small drones.csv'
-#path = 'users/adam/Desktop/AmazonFBA/JungleScoutFiles/'
+# path = '../JungleScoutFiles/Search Term of small drones.csv'
+
+
 
 def roundup(x):
     return int(math.ceil(x / 100.0)) * 100
 
+def SetPath():
+    downloadsPath = '/Users/adam/Downloads/Search Term of '
+    argString = ""
+    print(sys.argv[1-3])
+    file = " ".join(sys.argv).replace('program.py ', '')
+    # for arg in sys.argv:
+    #
+    #     if arg != "program.py":
+    #         arg + " "
+
+    ans = downloadsPath + file + ".csv"
+    return ans
+
+
 
 def Main():
+    print(sys.argv[1:])
     totalReviews = 0
     totalRevenue = 0
-    numberOfRowsUnderFiftyReviews = 0
     count = 0
+
+    # path = SetPath()
+    path = '/Users/adam/Downloads/Search Term of wooden ladel.csv'
+
+    print("searching for file at: " + path)
 
     with open(path) as csvfile:
         for i in range(7):

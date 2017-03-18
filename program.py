@@ -6,7 +6,8 @@ import math
 #path = '../JungleScoutFiles/Search_Term_of_shower_ curtains.csv'
 #path = '../JungleScoutFiles/test.csv'
 #path = '../JungleScoutFiles/Bedding.csv'
-path = '../JungleScoutFiles/TestFormat.csv'
+path = '../JungleScoutFiles/Search Term of small drones.csv'
+#path = 'users/adam/Desktop/AmazonFBA/JungleScoutFiles/'
 
 def roundup(x):
     return int(math.ceil(x / 100.0)) * 100

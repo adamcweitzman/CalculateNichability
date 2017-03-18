@@ -3,14 +3,6 @@ import csv
 import math
 import sys
 
-#path = '../JungleScoutFiles/Search_Term_of_bat_houses.csv'
-#path = '../JungleScoutFiles/Search_Term_of_shower_ curtains.csv'
-#path = '../JungleScoutFiles/test.csv'
-#path = '../JungleScoutFiles/Bedding.csv'
-# path = '../JungleScoutFiles/Search Term of small drones.csv'
-
-
-
 def roundup(x):
     return int(math.ceil(x / 100.0)) * 100
 
@@ -36,13 +28,18 @@ def Main():
     count = 0
 
     # path = SetPath()
-    path = '/Users/adam/Downloads/Search Term of wooden ladel.csv'
+    path = '/Users/adam/Downloads/Search Term of rain stick.csv'
 
     print("searching for file at: " + path)
 
     with open(path) as csvfile:
-        for i in range(7):
-            csvfile.__next__()
+        if (type(csvfile == 'io.TextIOWrapper')):
+            for i in range(7):
+                csvfile.__next__()
+        else:
+            for i in range(7):
+                csvfile.next()
+
         reader = csv.DictReader(csvfile)
         for row in reader:
             formattedRevenue = str(row['Est. Revenue']).replace(',', '').replace('$', '').replace('<', '')
